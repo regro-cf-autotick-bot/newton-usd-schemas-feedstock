@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: newton-usd-schemas
-  version: 0.2.0
+  version: 0.3.0
   build_number: 0
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace("-", "_")|lower }}-${{ version }}.tar.gz
-  sha256: b483a029e54f4a7b06d3156c47860e3e8b77e33e3ee4c4fd525c335d74f898a0
+  sha256: 99e32ddc215d3c9c22bb0387d2d0b458cc48555405b44d7e29bf2d0435bd5fea
 
 build:
   noarch: python
@@ -25,8 +25,6 @@ requirements:
     - hatchling
   run:
     - python >=${{ python_min }}
-    # This is marked as [dev] dependency, but it's imported in the main __init__.py.
-    - openusd >=25.11
 tests:
   - python:
       imports:
